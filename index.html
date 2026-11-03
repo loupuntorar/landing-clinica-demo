@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Dental Sta Clara</title>
 
-   <!-- Tailwind CSS CDN & Dark Mode Config -->
+    <!-- Tailwind CSS CDN & Dark Mode Config -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -15,171 +15,157 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
 
- <!-- Header / Navbar -->
+    <!-- Header / Navbar -->
     <header class="bg-white dark:bg-slate-900 shadow-sm sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center space-x-2">
                 <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">Clínica Dental Sta Clara</span>
             </div>
             <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-                <a href="#servicios" class="hover:text-blue-600 transition">Servicios</a>
-                <a href="#doctores" class="hover:text-blue-600 transition">Especialistas</a>
-                <a href="#contacto" class="hover:text-blue-600 transition">Ubicación</a>
+                <a href="#servicios" data-es="Servicios" data-en="Services" class="hover:text-blue-600 transition">Servicios</a>
+                <a href="#doctores" data-es="Especialistas" data-en="Specialists" class="hover:text-blue-600 transition">Especialistas</a>
+                <a href="#contacto" data-es="Ubicación" data-en="Location" class="hover:text-blue-600 transition">Ubicación</a>
             </nav>
+            
             <div class="flex items-center space-x-3">
+                <!-- Botón de cambio de idioma -->
+                <button id="lang-toggle" onclick="toggleLanguage()" class="px-3 py-1.5 text-xs font-semibold rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition">
+                    ES / EN
+                </button>
+
                 <!-- Theme Toggle Button -->
                 <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 transition">
                     🌙
                 </button>
-                <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20la%20clínica" target="_blank" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">
+                
+                <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20la%20clínica" target="_blank" data-es="Agendar Cita" data-en="Book Appointment" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">
                     Agendar Cita
                 </a>
             </div>
         </div>
     </header>
 
-<!-- Hero Section con la imagen y el carrusel de la Clínica Santa Clara -->
-<section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-    <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <span class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Clínica Dental Santa Clara</span>
-            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Sonrisas saludables y diseño dental avanzado en Minatitlán</h1>
-            <p class="text-blue-100 text-lg mb-8">Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance.</p>
-            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                <a href="https://wa.me/529220000000?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition text-center shadow-lg">
-                    Reservar por WhatsApp
-                </a>
-                <a href="#servicios" class="border border-blue-300 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition text-center">
-                    Ver Servicios
-                </a>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <span data-es="Clínica Dental Santa Clara" data-en="Santa Clara Dental Clinic" class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Clínica Dental Santa Clara</span>
+                <h1 data-es="Sonrisas saludables y diseño dental avanzado en Minatitlán" data-en="Healthy smiles and advanced dental design in Minatitlán" class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Sonrisas saludables y diseño dental avanzado en Minatitlán</h1>
+                <p data-es="Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance." data-en="Specialists committed to your oral health, modern equipment, and exceptional care within your reach." class="text-blue-100 text-lg mb-8">Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance.</p>
+                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                    <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" data-es="Reservar por WhatsApp" data-en="Book via WhatsApp" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition text-center shadow-lg">
+                        Reservar por WhatsApp
+                    </a>
+                    <a href="#servicios" data-es="Ver Servicios" data-en="View Services" class="border border-blue-300 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition text-center">
+                        Ver Servicios
+                    </a>
+                </div>
             </div>
-        </div>
-        
-      <!-- Contenedor del Carrusel en la Hero Section -->
-    <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 shadow-xl">
-        <p class="text-center text-sm text-blue-200 mb-3 font-medium">Clínica Dental Santa Clara - Minatitlán</p>
-        
-        <!-- Carrusel con scroll horizontal y efecto snap -->
-        <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory rounded-xl" style="scroll-behavior: smooth;">
-            <!-- INSERTA ESTO AQUÍ ADENTRO PARA OCULTAR LA BARRA -->
-            <style>
-                div::-webkit-scrollbar {
-                    display: none;
-                }
-            </style>
             
-            <!-- Imagen 1 del Carrusel (Tu logo extendido) -->
-            <div class="min-w-full snap-center">
-                <img src="img/clinica-santa-clara.jpg" alt="Logotipo y diseño Clínica Santa Clara" class="rounded-xl w-full h-80 object-cover shadow-inner">
-            </div>
-
-            <!-- Imagen 2 del Carrusel -->
-            <div class="min-w-full snap-center">
-                <img src="img/santaclara2.png" alt="Instalaciones modernas" class="rounded-xl w-full h-80 object-cover shadow-inner">
-            </div>
-
-            <!-- Imagen 3 del Carrusel -->
-            <div class="min-w-full snap-center">
-                <img src="img/santaclara3.png" alt="Atención dental profesional" class="rounded-xl w-full h-80 object-cover shadow-inner">
-            </div>
-
-        </div>
-        
-        <!-- Indicadores visuales -->
-        <div class="flex justify-center space-x-2 mt-3">
-            <span class="w-2 h-2 bg-white rounded-full opacity-75"></span>
-            <span class="w-2 h-2 bg-white/40 rounded-full"></span>
-            <span class="w-2 h-2 bg-white/40 rounded-full"></span>
-        </div>
-    </div>
-            
-            <!-- Indicadores visuales -->
-            <div class="flex justify-center space-x-2 mt-3">
-                <span class="w-2 h-2 bg-white rounded-full opacity-75"></span>
-                <span class="w-2 h-2 bg-white/40 rounded-full"></span>
-                <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+            <!-- Contenedor del Carrusel -->
+            <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 shadow-xl">
+                <p data-es="Clínica Dental Santa Clara - Minatitlán" data-en="Santa Clara Dental Clinic - Minatitlán" class="text-center text-sm text-blue-200 mb-3 font-medium">Clínica Dental Santa Clara - Minatitlán</p>
+                
+                <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory rounded-xl" style="scroll-behavior: smooth;">
+                    <style>
+                        div::-webkit-scrollbar {
+                            display: none;
+                        }
+                    </style>
+                    <div class="min-w-full snap-center">
+                        <img src="img/clinica-santa-clara.jpg" alt="Logotipo y diseño Clínica Santa Clara" class="rounded-xl w-full h-80 object-cover shadow-inner">
+                    </div>
+                    <div class="min-w-full snap-center">
+                        <img src="img/santaclara2.png" alt="Instalaciones modernas" class="rounded-xl w-full h-80 object-cover shadow-inner">
+                    </div>
+                    <div class="min-w-full snap-center">
+                        <img src="img/santaclara3.png" alt="Atención dental profesional" class="rounded-xl w-full h-80 object-cover shadow-inner">
+                    </div>
+                </div>
+                
+                <div class="flex justify-center space-x-2 mt-3">
+                    <span class="w-2 h-2 bg-white rounded-full opacity-75"></span>
+                    <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+                    <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Beneficios -->
-  <section class="py-12 bg-white dark:bg-slate-900 border-b dark:border-slate-800 transition-colors duration-300">
-    <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-        <div class="p-4">
-            <div class="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">⚡</div>
-            <h3 class="font-bold text-lg mb-1 text-slate-800 dark:text-white">Atención Rápida</h3>
-            <p class="text-slate-600 dark:text-slate-300 text-sm">Sin largas esperas, agendando de forma directa por mensajería.</p>
+    <section class="py-12 bg-white dark:bg-slate-900 border-b dark:border-slate-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="p-4">
+                <div class="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">⚡</div>
+                <h3 data-es="Atención Rápida" data-en="Fast Attention" class="font-bold text-lg mb-1 text-slate-800 dark:text-white">Atención Rápida</h3>
+                <p data-es="Sin largas esperas, agendando de forma directa por mensajería." data-en="No long waits, booking directly through messaging." class="text-slate-600 dark:text-slate-300 text-sm">Sin largas esperas, agendando de forma directa por mensajería.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">🩺</div>
+                <h3 data-es="Especialistas Certificados" data-en="Certified Specialists" class="font-bold text-lg mb-1 text-slate-800 dark:text-white">Especialistas Certificados</h3>
+                <p data-es="Médicos con cédula profesional y amplia trayectoria." data-en="Licensed doctors with extensive professional experience." class="text-slate-600 dark:text-slate-300 text-sm">Médicos con cédula profesional y amplia trayectoria.</p>
+            </div>
+            <div class="p-4">
+                <div class="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">📍</div>
+                <h3 data-es="Ubicación Céntrica" data-en="Central Location" class="font-bold text-lg mb-1 text-slate-800 dark:text-white">Ubicación Céntrica</h3>
+                <p data-es="Fácil acceso y zona segura en Minatitlán, Veracruz." data-en="Easy access in a safe area in Minatitlán, Veracruz." class="text-slate-600 dark:text-slate-300 text-sm">Fácil acceso y zona segura en Minatitlán, Veracruz.</p>
+            </div>
         </div>
-        <div class="p-4">
-            <div class="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">🩺</div>
-            <h3 class="font-bold text-lg mb-1 text-slate-800 dark:text-white">Especialistas Certificados</h3>
-            <p class="text-slate-600 dark:text-slate-300 text-sm">Médicos con cédula profesional y amplia trayectoria.</p>
-        </div>
-        <div class="p-4">
-            <div class="text-blue-600 dark:text-blue-400 text-3xl font-bold mb-2">📍</div>
-            <h3 class="font-bold text-lg mb-1 text-slate-800 dark:text-white">Ubicación Céntrica</h3>
-            <p class="text-slate-600 dark:text-slate-300 text-sm">Fácil acceso y zona segura en Minatitlán, Veracruz.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-   <!-- Servicios -->
+    <!-- Servicios -->
     <section id="servicios" class="py-16 max-w-7xl mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-3xl font-bold text-slate-900 dark:text-white">Nuestros Servicios Médicos</h2>
-            <p class="text-slate-600 dark:text-slate-400 mt-2">Soluciones integrales para el cuidado de tu salud.</p>
+            <h2 data-es="Nuestros Servicios Médicos" data-en="Our Medical Services" class="text-3xl font-bold text-slate-900 dark:text-white">Nuestros Servicios Médicos</h2>
+            <p data-es="Soluciones integrales para el cuidado de tu salud." data-en="Comprehensive solutions for your health care." class="text-slate-600 dark:text-slate-400 mt-2">Soluciones integrales para el cuidado de tu salud.</p>
         </div>
         
         <div class="grid md:grid-cols-3 gap-8">
-            <!-- Tarjeta 1 -->
             <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition">
                 <div class="bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🦷</div>
-                <h3 class="font-bold text-xl mb-2 text-slate-900 dark:text-white">Odontología Integral</h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">Cuidado dental avanzado, limpiezas, ortodoncia y estética dental sin dolor.</p>
-                <a href="https://wa.me/529220000000?text=Hola,%20me%20interesa%20información%20sobre%20Odontología" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Consultar precio &rarr;</a>
+                <h3 data-es="Odontología Integral" data-en="Comprehensive Dentistry" class="font-bold text-xl mb-2 text-slate-900 dark:text-white">Odontología Integral</h3>
+                <p data-es="Cuidado dental avanzado, limpiezas, ortodoncia y estética dental sin dolor." data-en="Advanced dental care, cleanings, orthodontics, and painless cosmetic dentistry." class="text-slate-600 dark:text-slate-300 text-sm mb-4">Cuidado dental avanzado, limpiezas, ortodoncia y estética dental sin dolor.</p>
+                <a href="https://wa.me/529221145756?text=Hola,%20me%20interesa%20información%20sobre%20Odontología" target="_blank" data-es="Consultar precio &rarr;" data-en="Ask for pricing &rarr;" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Consultar precio &rarr;</a>
             </div>
 
-            <!-- Tarjeta 2 -->
             <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition">
                 <div class="bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl mb-4">👶</div>
-                <h3 class="font-bold text-xl mb-2 text-slate-900 dark:text-white">Pediatría</h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">Seguimiento al desarrollo infantil, control de vacunas y atención especializada para tus hijos.</p>
-                <a href="https://wa.me/529220000000?text=Hola,%20me%20interesa%20información%20sobre%20Pediatría" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Consultar precio &rarr;</a>
+                <h3 data-es="Pediatría" data-en="Pediatrics" class="font-bold text-xl mb-2 text-slate-900 dark:text-white">Pediatría</h3>
+                <p data-es="Seguimiento al desarrollo infantil, control de vacunas y atención especializada para tus hijos." data-en="Child development monitoring, vaccination control, and specialized care for your kids." class="text-slate-600 dark:text-slate-300 text-sm mb-4">Seguimiento al desarrollo infantil, control de vacunas y atención especializada para tus hijos.</p>
+                <a href="https://wa.me/529221145756?text=Hola,%20me%20interesa%20información%20sobre%20Pediatría" target="_blank" data-es="Consultar precio &rarr;" data-en="Ask for pricing &rarr;" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Consultar precio &rarr;</a>
             </div>
 
-            <!-- Tarjeta 3 -->
             <div class="bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 hover:shadow-md transition">
                 <div class="bg-blue-50 dark:bg-blue-950 text-blue-600 dark:text-blue-400 w-12 h-12 rounded-xl flex items-center justify-center font-bold text-xl mb-4">🫀</div>
-                <h3 class="font-bold text-xl mb-2 text-slate-900 dark:text-white">Medicina General</h3>
-                <p class="text-slate-600 dark:text-slate-300 text-sm mb-4">Diagnóstico oportuno, control de enfermedades crónicas y consultas preventivas.</p>
-                <a href="https://wa.me/529220000000?text=Hola,%20me%20interesa%20información%20sobre%20Medicina%20General" target="_blank" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Consultar precio &rarr;</a>
+                <h3 data-es="Medicina General" data-en="General Medicine" class="font-bold text-xl mb-2 text-slate-900 dark:text-white">Medicina General</h3>
+                <p data-es="Diagnóstico oportuno, control de enfermedades crónicas y consultas preventivas." data-en="Timely diagnosis, chronic disease management, and preventive medical consultations." class="text-slate-600 dark:text-slate-300 text-sm mb-4">Diagnóstico oportuno, control de enfermedades crónicas y consultas preventivas.</p>
+                <a href="https://wa.me/529221145756?text=Hola,%20me%20interesa%20información%20sobre%20Medicina%20General" target="_blank" data-es="Consultar precio &rarr;" data-en="Ask for pricing &rarr;" class="text-blue-600 dark:text-blue-400 font-semibold text-sm hover:underline">Consultar precio &rarr;</a>
             </div>
         </div>
     </section>
 
     <!-- Sección de Especialistas -->
-    <section id="doctores" class="py-16 bg-white border-t">
+    <section id="doctores" class="py-16 bg-white dark:bg-slate-900 border-t dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-slate-900">Nuestros Especialistas</h2>
-                <p class="text-slate-600 mt-2">Profesionales certificados dedicados a tu salud.</p>
+                <h2 data-es="Nuestros Especialistas" data-en="Our Specialists" class="text-3xl font-bold text-slate-900 dark:text-white">Nuestros Especialistas</h2>
+                <p data-es="Profesionales certificados dedicados a tu salud." data-en="Certified professionals dedicated to your health." class="text-slate-600 dark:text-slate-400 mt-2">Profesionales certificados dedicados a tu salud.</p>
             </div>
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex items-center space-x-4">
+                <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4">
                     <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300" alt="Dr. Ricardo Gómez" class="w-20 h-20 rounded-full object-cover shadow-sm">
                     <div>
-                        <h3 class="font-bold text-lg text-slate-900">Dr. Ricardo Gómez</h3>
-                        <p class="text-blue-600 text-sm font-medium">Odontología y Estética Dental</p>
-                        <p class="text-slate-500 text-xs mt-1">Céd. Prof. 12345678</p>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dr. Ricardo Gómez</h3>
+                        <p data-es="Odontología y Estética Dental" data-en="Dentistry & Cosmetic Dentistry" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Odontología y Estética Dental</p>
+                        <p data-es="Céd. Prof. 12345678" data-en="Lic. No. 12345678" class="text-slate-500 dark:text-slate-400 text-xs mt-1">Céd. Prof. 12345678</p>
                     </div>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex items-center space-x-4">
+                <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4">
                     <img src="https://images.unsplash.com/photo-1594824813575-b6d393fb4577?auto=format&fit=crop&q=80&w=300" alt="Dra. María Elena Ruiz" class="w-20 h-20 rounded-full object-cover shadow-sm">
                     <div>
-                        <h3 class="font-bold text-lg text-slate-900">Dra. María Elena Ruiz</h3>
-                        <p class="text-blue-600 text-sm font-medium">Pediatría y Desarrollo Infantil</p>
-                        <p class="text-slate-500 text-xs mt-1">Céd. Prof. 87654321</p>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dra. María Elena Ruiz</h3>
+                        <p data-es="Pediatría y Desarrollo Infantil" data-en="Pediatrics & Child Development" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Pediatría y Desarrollo Infantil</p>
+                        <p data-es="Céd. Prof. 87654321" data-en="Lic. No. 87654321" class="text-slate-500 dark:text-slate-400 text-xs mt-1">Céd. Prof. 87654321</p>
                     </div>
                 </div>
             </div>
@@ -187,87 +173,76 @@
     </section>
 
     <!-- Ubicación y Contacto -->
-    <section id="contacto" class="py-16 bg-slate-50 border-t">
+    <section id="contacto" class="py-16 bg-slate-50 dark:bg-slate-950 border-t dark:border-slate-800 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Visítanos en Minatitlán</h2>
-                <p class="text-slate-600 mb-6">Estamos ubicados en una zona accesible y segura, listos para brindarte la atención que mereces.</p>
-                <div class="space-y-3 text-slate-700 text-sm">
-                    <p>📍 <strong>Dirección:</strong> Calle Reynosa No. 5 Colonia Nueva Tacoteno, Minatitlán, 96735</p>
-                    <p>🕒 <strong>Horarios:</strong> Lunes a Sábados de 9:00 AM a 7:00 PM </p>
-                    <p>📞 <strong>Teléfono / WhatsApp:</strong> +52 922 114 5756</p>
+                <h2 data-es="Visítanos en Minatitlán" data-en="Visit Us in Minatitlán" class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Visítanos en Minatitlán</h2>
+                <p data-es="Estamos ubicados en una zona accesible y segura, listos para brindarte la atención que mereces." data-en="We are located in an accessible and safe area, ready to provide the care you deserve." class="text-slate-600 dark:text-slate-300 mb-6">Estamos ubicados en una zona accesible y segura, listos para brindarte la atención que mereces.</p>
+                <div class="space-y-3 text-slate-700 dark:text-slate-300 text-sm">
+                    <p>📍 <strong><span data-es="Dirección:" data-en="Address:">Dirección:</span></strong> Calle Reynosa No. 5 Colonia Nueva Tacoteno, Minatitlán, 96735</p>
+                    <p>🕒 <strong><span data-es="Horarios:" data-en="Hours:">Horarios:</span></strong> <span data-es="Lunes a Sábados de 9:00 AM a 7:00 PM" data-en="Monday to Saturday 9:00 AM to 7:00 PM">Lunes a Sábados de 9:00 AM a 7:00 PM</span></p>
+                    <p>📞 <strong><span data-es="Teléfono / WhatsApp:" data-en="Phone / WhatsApp:">Teléfono / WhatsApp:</span></strong> +52 922 114 5756</p>
                 </div>
             </div>
+            
             <!-- Contenedor del Mapa Real de Google Maps -->
-        <div class="bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 w-full overflow-hidden">
-            <div class="w-full h-64 rounded-xl overflow-hidden">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15178.790231453891!2d-94.5454614!3d17.9928027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ea29be6e0ddfb9%3A0x5ff2f4766f95e410!2sCl%C3%ADnica%20Dental%20Sta%20Clara!5e0!3m2!1ses-419!2smx!4v1793737783208!5m2!1ses-419!2smx" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="strict-origin-when-cross-origin">
-                </iframe>
+            <div class="bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 w-full overflow-hidden">
+                <div class="w-full h-64 rounded-xl overflow-hidden">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15178.790231453891!2d-94.5454614!3d17.9928027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ea29be6e0ddfb9%3A0x5ff2f4766f95e410!2sCl%C3%ADnica%20Dental%20Sta%20Clara!5e0!3m2!1ses-419!2smx!4v1793737783208!5m2!1ses-419!2smx" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
-     
-<!-- Sección de Redes Sociales / Footer -->
-<footer class="bg-blue-950 text-white py-12 border-t border-blue-900">
-    <div class="max-w-7xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+    <footer class="bg-blue-950 text-white py-12 border-t border-blue-900">
+        <div class="max-w-7xl mx-auto px-4 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div>
+                <h3 data-es="Sigue a la Clínica Dental Santa Clara" data-en="Follow Santa Clara Dental Clinic" class="text-lg font-semibold mb-1">Sigue a la Clínica Dental Santa Clara</h3>
+                <p data-es="Entérate de promociones y consejos de salud bucal." data-en="Get updates on promotions and oral health tips." class="text-blue-200 text-sm">Entérate de promociones y consejos de salud bucal.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center md:justify-end gap-3">
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/c.dental.sta.clara" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="Facebook">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/dentalsantaclara01/" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="Instagram">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@clnica.dental.sta.clara?_r=1&_t=ZS-9B6fLSfW3Xd" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="TikTok">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                </a>
+                <!-- YouTube -->
+                <a href="https://youtube.com" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="YouTube">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="LinkedIn">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                </a>
+            </div>
+        </div>
         
-        <!-- Texto descriptivo -->
-        <div>
-            <h3 class="text-lg font-semibold mb-1">Sigue a la Clínica Dental Santa Clara</h3>
-            <p class="text-blue-200 text-sm">Entérate de promociones y consejos de salud bucal.</p>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-blue-900/60 text-center text-xs text-blue-300">
+            <p data-es="&copy; 2026 Clínica Dental Santa Clara. Todos los derechos reservados." data-en="&copy; 2026 Santa Clara Dental Clinic. All rights reserved.">&copy; 2026 Clínica Dental Santa Clara. Todos los derechos reservados.</p>
         </div>
+    </footer>
 
-        <!-- Botones circulares de redes sociales -->
-        <div class="flex flex-wrap justify-center md:justify-end gap-3">
-            
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/c.dental.sta.clara" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="Facebook">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/dentalsantaclara01/" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="Instagram">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-            </a>
-
-            <!-- TikTok -->
-            <a href="https://www.tiktok.com/@clnica.dental.sta.clara?_r=1&_t=ZS-9B6fLSfW3Xd" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="TikTok">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 3 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
-            </a>
-
-            <!-- YouTube (Nuevo) -->
-            <a href="https://youtube.com" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="YouTube">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-            </a>
-
-            <!-- LinkedIn (Nuevo) -->
-            <a href="https://linkedin.com" target="_blank" class="w-12 h-12 rounded-full border border-blue-700 hover:border-white flex items-center justify-center transition hover:bg-blue-900 text-white shadow-sm" aria-label="LinkedIn">
-                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-
-        </div>
-    </div>
-    
-    <!-- Créditos inferiores -->
-    <div class="max-w-7xl mx-auto px-4 mt-8 pt-6 border-t border-blue-900/60 text-center text-xs text-blue-300">
-        <p>&copy; 2026 Clínica Dental Santa Clara. Todos los derechos reservados.</p>
-    </div>
-</footer>
-<!-- Dark Mode Script -->
+    <!-- Dark Mode Script -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
         
-        // Check local storage or system preference on load
         if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
             themeToggleBtn.textContent = '☀️';
@@ -276,7 +251,6 @@
             themeToggleBtn.textContent = '🌙';
         }
 
-        // Handle click event to switch theme
         themeToggleBtn.addEventListener('click', function () {
             if (document.documentElement.classList.contains('dark')) {
                 document.documentElement.classList.remove('dark');
@@ -288,6 +262,26 @@
                 themeToggleBtn.textContent = '☀️';
             }
         });
+    </script>
+
+    <!-- Script de Traducción Multi-idioma Escalable -->
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            const translatableElements = document.querySelectorAll('[data-es]');
+
+            translatableElements.forEach(el => {
+                if (currentLang === 'en') {
+                    el.innerHTML = el.getAttribute('data-en');
+                } else {
+                    el.innerHTML = el.getAttribute('data-es');
+                }
+            });
+
+            document.getElementById('lang-toggle').innerText = currentLang === 'es' ? 'ES / EN' : 'EN / ES';
+        }
     </script>
 </body>
 </html>
