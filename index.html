@@ -38,27 +38,70 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Salud y Cuidado Profesional</span>
-                <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Atención médica confiable para ti y tu familia en Minatitlán</h1>
-                <p class="text-blue-100 text-lg mb-8">Especialistas comprometidos con tu bienestar, equipamiento moderno y un trato humano excepcional a tu alcance.</p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <a href="https://wa.me/529220000000?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition text-center shadow-lg">
-                        Reservar por WhatsApp
-                    </a>
-                    <a href="#servicios" class="border border-blue-300 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition text-center">
-                        Ver Servicios
-                    </a>
-                </div>
-            </div>
-            <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 shadow-xl">
-                <img src="https://images.unsplash.com/photo-1584515979956-media983f4f7?auto=format&fit=crop&q=80&w=800" alt="Clínica médica" class="rounded-xl w-full h-80 object-cover">
+<!-- Hero Section con la imagen y el carrusel de la Clínica Santa Clara -->
+<section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
+        <div>
+            <span class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Clínica Dental Santa Clara</span>
+            <h1 class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Sonrisas saludables y diseño dental avanzado en Minatitlán</h1>
+            <p class="text-blue-100 text-lg mb-8">Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance.</p>
+            <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
+                <a href="https://wa.me/529220000000?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition text-center shadow-lg">
+                    Reservar por WhatsApp
+                </a>
+                <a href="#servicios" class="border border-blue-300 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition text-center">
+                    Ver Servicios
+                </a>
             </div>
         </div>
-    </section>
+        
+      <!-- Contenedor del Carrusel en la Hero Section -->
+    <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 shadow-xl">
+        <p class="text-center text-sm text-blue-200 mb-3 font-medium">Clínica Dental Santa Clara - Minatitlán</p>
+        
+        <!-- Carrusel con scroll horizontal y efecto snap -->
+        <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory rounded-xl" style="scroll-behavior: smooth;">
+            <!-- INSERTA ESTO AQUÍ ADENTRO PARA OCULTAR LA BARRA -->
+            <style>
+                div::-webkit-scrollbar {
+                    display: none;
+                }
+            </style>
+            
+            <!-- Imagen 1 del Carrusel (Tu logo extendido) -->
+            <div class="min-w-full snap-center">
+                <img src="img/clinica-santa-clara.jpg" alt="Logotipo y diseño Clínica Santa Clara" class="rounded-xl w-full h-80 object-cover shadow-inner">
+            </div>
+
+            <!-- Imagen 2 del Carrusel -->
+            <div class="min-w-full snap-center">
+                <img src="img/santaclara2.png" alt="Instalaciones modernas" class="rounded-xl w-full h-80 object-cover shadow-inner">
+            </div>
+
+            <!-- Imagen 3 del Carrusel -->
+            <div class="min-w-full snap-center">
+                <img src="img/santaclara3.png" alt="Atención dental profesional" class="rounded-xl w-full h-80 object-cover shadow-inner">
+            </div>
+
+        </div>
+        
+        <!-- Indicadores visuales -->
+        <div class="flex justify-center space-x-2 mt-3">
+            <span class="w-2 h-2 bg-white rounded-full opacity-75"></span>
+            <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+            <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+        </div>
+    </div>
+            
+            <!-- Indicadores visuales -->
+            <div class="flex justify-center space-x-2 mt-3">
+                <span class="w-2 h-2 bg-white rounded-full opacity-75"></span>
+                <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+                <span class="w-2 h-2 bg-white/40 rounded-full"></span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Beneficios -->
   <section class="py-12 bg-white dark:bg-slate-900 border-b dark:border-slate-800 transition-colors duration-300">
@@ -114,7 +157,7 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Sección de Especialistas -->
     <section id="doctores" class="py-16 bg-white border-t">
         <div class="max-w-7xl mx-auto px-4">
@@ -155,14 +198,23 @@
                     <p>📞 <strong>Teléfono / WhatsApp:</strong> +52 922 000 0000</p>
                 </div>
             </div>
-            <div class="bg-white p-2 rounded-2xl shadow-sm border border-slate-200">
-                <!-- Google Maps Placeholder / Embed -->
-                <div class="w-full h-64 bg-slate-200 rounded-xl flex items-center justify-center text-slate-500 text-sm font-medium">
-                    [ Mapa de Ubicación - Minatitlán ]
-                </div>
+            <!-- Contenedor del Mapa Real de Google Maps -->
+        <div class="bg-white dark:bg-slate-800 p-2 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+            <div class="w-full h-64 rounded-xl overflow-hidden">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15178.790231453891!2d-94.5454614!3d17.9928027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ea29be6e0ddfb9%3A0x5ff2f4766f95e410!2sCl%C3%ADnica%20Dental%20Sta%20Clara!5e0!3m2!1ses-419!2smx!4v1793737783208!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.123456789!2d-94.56789!3d18.012345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDAwJzQ4LjQiTiA5NCUzMzInMzQuNCJX!5e0!3m2!1ses!2smx!4v1234567890" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-8 text-center text-sm">
