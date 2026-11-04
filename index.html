@@ -176,33 +176,48 @@
         </div>
     </section>
 
-    <!-- Sección de Especialistas -->
-    <section id="doctores" class="py-16 bg-white dark:bg-slate-900 border-t dark:border-slate-800 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-12">
-                <h2 data-es="Nuestros Especialistas" data-en="Our Specialists" class="text-3xl font-bold text-slate-900 dark:text-white">Nuestros Especialistas</h2>
-                <p data-es="Profesionales certificados dedicados a tu salud." data-en="Certified professionals dedicated to your health." class="text-slate-600 dark:text-slate-400 mt-2">Profesionales certificados dedicados a tu salud.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4">
-                    <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300" alt="Dr. Ricardo Gómez" class="w-20 h-20 rounded-full object-cover shadow-sm">
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dr. Ricardo Gómez</h3>
-                        <p data-es="Odontología y Estética Dental" data-en="Dentistry & Cosmetic Dentistry" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Odontología y Estética Dental</p>
-                        <p data-es="Céd. Prof. 12345678" data-en="Lic. No. 12345678" class="text-slate-500 dark:text-slate-400 text-xs mt-1">Céd. Prof. 12345678</p>
-                    </div>
-                </div>
-                <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 flex items-center space-x-4">
-                    <img src="https://images.unsplash.com/photo-1594824813575-b6d393fb4577?auto=format&fit=crop&q=80&w=300" alt="Dra. María Elena Ruiz" class="w-20 h-20 rounded-full object-cover shadow-sm">
-                    <div>
-                        <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dra. María Elena Ruiz</h3>
-                        <p data-es="Pediatría y Desarrollo Infantil" data-en="Pediatrics & Child Development" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Pediatría y Desarrollo Infantil</p>
-                        <p data-es="Céd. Prof. 87654321" data-en="Lic. No. 87654321" class="text-slate-500 dark:text-slate-400 text-xs mt-1">Céd. Prof. 87654321</p>
-                    </div>
-                </div>
-            </div>
+ <!-- Sección de Especialistas -->
+<section id="doctores" class="py-16 bg-white dark:bg-slate-900 border-t dark:border-slate-800 transition-colors duration-300">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 data-es="Nuestros Especialistas" data-en="Our Specialists" class="text-3xl font-bold text-slate-900 dark:text-white">Nuestros Especialistas</h2>
+            <p data-es="Profesionales certificados dedicados a tu salud." data-en="Certified professionals dedicated to your health." class="text-slate-600 dark:text-slate-400 mt-2">Profesionales certificados dedicados a tu salud.</p>
         </div>
-    </section>
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            
+            <!-- Dr. Ricardo Gómez -->
+            <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300" alt="Dr. Ricardo Gómez" class="w-20 h-20 rounded-full object-cover shadow-sm flex-shrink-0">
+                <div class="text-center sm:text-left w-full">
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dr. Ricardo Gómez</h3>
+                    <p data-es="Odontología y Estética Dental" data-en="Dentistry & Cosmetic Dentistry" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Odontología y Estética Dental</p>
+                    <p data-es="Céd. Prof. 12345678" data-en="Lic. No. 12345678" class="text-slate-500 dark:text-slate-400 text-xs mt-1">Céd. Prof. 12345678</p>
+                    
+                    <!-- Botón directo a WhatsApp con mensaje específico -->
+                    <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20consulta%20específica%20con%20el%20Dr.%20Ricardo%20Gómez" target="_blank" data-es="Consulta con Dr. Ricardo &rarr;" data-en="Consult Dr. Ricardo &rarr;" class="inline-block mt-3 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">
+                        Consulta con Dr. Ricardo &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Dra. María Elena Ruiz -->
+            <div class="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl border border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-4">
+                <img src="https://images.unsplash.com/photo-1594824813575-b6d393fb4577?auto=format&fit=crop&q=80&w=300" alt="Dra. María Elena Ruiz" class="w-20 h-20 rounded-full object-cover shadow-sm flex-shrink-0">
+                <div class="text-center sm:text-left w-full">
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white">Dra. María Elena Ruiz</h3>
+                    <p data-es="Pediatría y Desarrollo Infantil" data-en="Pediatrics & Child Development" class="text-blue-600 dark:text-blue-400 text-sm font-medium">Pediatría y Desarrollo Infantil</p>
+                    <p data-es="Céd. Prof. 87654321" data-en="Lic. No. 87654321" class="text-slate-500 dark:text-slate-400 text-xs mt-1">Céd. Prof. 87654321</p>
+                    
+                    <!-- Botón directo a WhatsApp con mensaje específico -->
+                    <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20consulta%20específica%20con%20la%20Dra.%20María%20Elena%20Ruiz" target="_blank" data-es="Consulta con Dra. María Elena &rarr;" data-en="Consult Dra. Maria Elena &rarr;" class="inline-block mt-3 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:underline">
+                        Consulta con Dra. María Elena &rarr;
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- Ubicación y Contacto -->
     <section id="contacto" class="py-16 bg-slate-50 dark:bg-slate-950 border-t dark:border-slate-800 transition-colors duration-300">
