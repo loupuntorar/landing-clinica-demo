@@ -15,7 +15,7 @@
 </head>
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans antialiased transition-colors duration-300">
 
-<!-- Header / Navbar Minimalista con Menú Desplegable -->
+<!-- Header / Navbar con Tuerca de Configuración -->
     <header class="bg-white dark:bg-slate-900 shadow-sm sticky top-0 z-50 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
             
@@ -23,8 +23,15 @@
             <div class="flex items-center space-x-2">
                 <span class="text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400">Clínica Dental Sta Clara</span>
             </div>
+
+            <!-- Navegación Visible (Servicios, Especialistas, Ubicación) -->
+            <nav class="hidden md:flex space-x-6 text-sm font-medium text-slate-600 dark:text-slate-300">
+                <a href="#servicios" data-es="Servicios" data-en="Services" class="hover:text-blue-600 transition">Servicios</a>
+                <a href="#doctores" data-es="Especialistas" data-en="Specialists" class="hover:text-blue-600 transition">Especialistas</a>
+                <a href="#contacto" data-es="Ubicación" data-en="Location" class="hover:text-blue-600 transition">Ubicación</a>
+            </nav>
             
-            <!-- Acciones Principales y Menú Desplegable -->
+            <!-- Acciones a la Derecha: WhatsApp + Botón Tuerca -->
             <div class="flex items-center space-x-3 relative">
                 
                 <!-- Botón Principal WhatsApp -->
@@ -32,35 +39,24 @@
                     Agendar Cita
                 </a>
 
-                <!-- Botón de Menú Desplegable (Icono con flechita) -->
-                <button id="menu-dropdown-btn" onclick="toggleMenu()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition flex items-center space-x-1" aria-label="Abrir menú">
+                <!-- Botón con Icono de Tuerca (Configuración) -->
+                <button id="config-dropdown-btn" onclick="toggleConfigMenu()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Ajustes de la página">
                     <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="3" y1="12" x2="21" y2="12"></line>
-                        <line x1="3" y1="6" x2="21" y2="6"></line>
-                        <line x1="3" y1="18" x2="21" y2="18"></line>
-                    </svg>
-                    <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="6 9 12 15 18 9"></polyline>
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                     </svg>
                 </button>
 
-                <!-- Menú Flotante Desplegable -->
-                <div id="nav-dropdown" class="hidden absolute right-0 top-12 w-56 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl py-2 z-50 transition-all">
+                <!-- Menú Desplegable de Ajustes (Modo Oscuro e Idioma) -->
+                <div id="config-dropdown" class="hidden absolute right-0 top-12 w-48 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl py-2 z-50 transition-all">
                     
-                    <!-- Enlaces de navegación interna -->
-                    <a href="#servicios" onclick="toggleMenu()" data-es="Servicios" data-en="Services" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Servicios</a>
-                    <a href="#doctores" onclick="toggleMenu()" data-es="Especialistas" data-en="Specialists" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Especialistas</a>
-                    <a href="#contacto" onclick="toggleMenu()" data-es="Ubicación" data-en="Location" class="block px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">Ubicación</a>
-                    
-                    <div class="border-t border-slate-100 dark:border-slate-700 my-1"></div>
-
-                    <!-- Botón Modo Oscuro dentro del Menú -->
+                    <!-- Botón Modo Oscuro -->
                     <button id="theme-toggle" class="w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-between">
-                        <span data-es="Modo Claro / Oscuro" data-en="Light / Dark Mode">Modo Claro / Oscuro</span>
-                        <span id="theme-icon">🌙</span>
+<span id="theme-text" data-es="Modo Oscuro" data-en="Dark Mode">Modo Oscuro</span>
+    <span id="theme-icon" class="flex items-center justify-center"></span>
                     </button>
 
-                    <!-- Botón Cambiar Idioma dentro del Menú -->
+                    <!-- Botón Cambiar Idioma -->
                     <button id="lang-toggle" onclick="toggleLanguage()" class="w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition flex items-center justify-between">
                         <span data-es="Idioma" data-en="Language">Idioma</span>
                         <span id="lang-label" class="font-bold text-xs bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-300 px-2 py-0.5 rounded">ES / EN</span>
@@ -335,34 +331,43 @@
         </div>
     </footer>
 
-<!-- Dark Mode Script con SVG Minimalistas -->
+<!-- Dark Mode Script con Texto e Íconos SVG -->
     <script>
         const themeToggleBtn = document.getElementById('theme-toggle');
-        
-        // Íconos SVG para Sol y Luna
-        const sunIcon = `<svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-        const moonIcon = `<svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+        const themeIconContainer = document.getElementById('theme-icon');
+        const themeText = document.getElementById('theme-text');
 
-        // Verificar la preferencia guardada o del sistema
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            themeToggleBtn.innerHTML = sunIcon;
-        } else {
-            document.documentElement.classList.remove('dark');
-            themeToggleBtn.innerHTML = moonIcon;
+        // Íconos SVG minimalistas
+        const sunIcon = `<svg class="w-5 h-5 stroke-current text-amber-500" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+        const moonIcon = `<svg class="w-5 h-5 stroke-current text-blue-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+        function updateThemeUI(isDark) {
+            if (isDark) {
+                document.documentElement.classList.add('dark');
+                themeIconContainer.innerHTML = sunIcon;
+                themeText.setAttribute('data-es', 'Modo Claro');
+                themeText.setAttribute('data-en', 'Light Mode');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIconContainer.innerHTML = moonIcon;
+                themeText.setAttribute('data-es', 'Modo Oscuro');
+                themeText.setAttribute('data-en', 'Dark Mode');
+            }
+            const currentLang = document.documentElement.lang || 'es';
+            themeText.textContent = themeText.getAttribute(`data-${currentLang}`);
         }
 
-        // Evento de clic para alternar tema
+        // Estado inicial
+        const isDarkMode = localStorage.getItem('color-theme') === 'dark' || 
+            (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        updateThemeUI(isDarkMode);
+
+        // Evento Clic
         themeToggleBtn.addEventListener('click', function () {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.setItem('color-theme', 'light');
-                themeToggleBtn.innerHTML = moonIcon;
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.setItem('color-theme', 'dark');
-                themeToggleBtn.innerHTML = sunIcon;
-            }
+            const currentlyDark = document.documentElement.classList.contains('dark');
+            const nextState = !currentlyDark;
+            localStorage.setItem('color-theme', nextState ? 'dark' : 'light');
+            updateThemeUI(nextState);
         });
     </script>
     <!-- Script de Traducción Multi-idioma Escalable -->
@@ -383,15 +388,15 @@
 
             document.getElementById('lang-toggle').innerText = currentLang === 'es' ? 'ES / EN' : 'EN / ES';
         }
-        function toggleMenu() {
-    const dropdown = document.getElementById('nav-dropdown');
+        function toggleConfigMenu() {
+    const dropdown = document.getElementById('config-dropdown');
     dropdown.classList.toggle('hidden');
 }
 
-// Cerrar el menú automáticamente si el usuario hace clic fuera de él
+// Cerrar el menú automáticamente al hacer clic afuera
 window.addEventListener('click', function(e) {
-    const btn = document.getElementById('menu-dropdown-btn');
-    const dropdown = document.getElementById('nav-dropdown');
+    const btn = document.getElementById('config-dropdown-btn');
+    const dropdown = document.getElementById('config-dropdown');
     if (btn && dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
         dropdown.classList.add('hidden');
     }
