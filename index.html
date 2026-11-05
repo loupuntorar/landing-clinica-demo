@@ -114,12 +114,12 @@
     </header>
 
 <!-- Hero Section con carrusel a pantalla completa (50/50) -->
-<section class="bg-blue-900 dark:bg-slate-900 text-white transition-colors duration-300">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center">
+<section class="bg-blue-900 dark:bg-slate-900 text-white transition-colors duration-300 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center min-h-[450px]">
         
         <!-- Columna Izquierda: Texto y Botones -->
-        <div class="p-8 md:p-12 lg:p-16 space-y-6">
-            <span class="text-xs font-bold uppercase tracking-widest text-blue-300 bg-blue-800/60 dark:bg-slate-800/80 px-3 py-1 rounded-full inline-block">
+        <div class="p-8 md:p-12 lg:p-16 space-y-6 z-10">
+            <span data-es="Clínica Dental Santa Clara" data-en="Santa Clara Dental Clinic" class="text-xs font-bold uppercase tracking-widest text-blue-300 bg-blue-800/60 dark:bg-slate-800/80 px-3 py-1 rounded-full inline-block">
                 Clínica Dental Santa Clara
             </span>
             
@@ -136,35 +136,70 @@
                 <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20la%20clínica" target="_blank" data-es="Reservar por WhatsApp" data-en="Book via WhatsApp" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-emerald-500/20">
                     Reservar por WhatsApp
                 </a>
-                <a href="#servicios" data-es="Ver Servicios" data-en="View Services" class="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-xl transition">
+                <a href="#servicios" data-es="Ver Servicios" data-en="View Services" class="border border-blue-300 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition">
                     Ver Servicios
                 </a>
             </div>
         </div>
 
         <!-- Columna Derecha: Carrusel deslizable ocupando toda la mitad -->
-        <div class="relative w-full h-[350px] sm:h-[450px] md:h-full min-h-[400px] overflow-hidden">
-            <div id="hero-carousel" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+        <div class="relative w-full h-[350px] sm:h-[450px] md:h-full min-h-[400px] overflow-hidden group">
+            
+            <!-- Contenedor de Diapositivas -->
+            <div id="hero-slider" class="flex w-full h-full transition-transform duration-700 ease-in-out">
                 <!-- Imagen 1 -->
                 <div class="w-full h-full flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" alt="Instalaciones de la clínica" class="w-full h-full object-cover">
+                    <img src="img/clinica/clinica-santa-clara.jpg" alt="Logotipo y diseño Clínica Santa Clara" class="w-full h-full object-cover">
                 </div>
                 <!-- Imagen 2 -->
                 <div class="w-full h-full flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1000" alt="Atención odontológica" class="w-full h-full object-cover">
+                    <img src="img/clinica/santaclara2.png" alt="Instalaciones modernas" class="w-full h-full object-cover">
                 </div>
                 <!-- Imagen 3 -->
                 <div class="w-full h-full flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1000" alt="Equipo profesional" class="w-full h-full object-cover">
+                    <img src="img/clinica/santaclara3.png" alt="Instalaciones modernas2" class="w-full h-full object-cover">
                 </div>
             </div>
 
-            <!-- Gradiente decorativo para suavizar la unión del borde en móviles -->
-            <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-blue-900 dark:from-slate-900 to-transparent pointer-events-none hidden md:block"></div>
+            <!-- Botones de Navegación Flechas (Aparecen al pasar el mouse o tocar) -->
+            <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition opacity-80 group-hover:opacity-100 z-20">
+                &#10094;
+            </button>
+            <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition opacity-80 group-hover:opacity-100 z-20">
+                &#10095;
+            </button>
+
+            <!-- Sombra difuminada para acoplar la imagen al fondo del Hero -->
+            <div class="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-blue-900 dark:from-slate-900 to-transparent pointer-events-none hidden md:block z-10"></div>
         </div>
 
     </div>
 </section>
+
+<!-- Script para la Lógica del Carrusel -->
+<script>
+    let currentSlide = 0;
+    const slider = document.getElementById('hero-slider');
+    const totalSlides = slider ? slider.children.length : 0;
+
+    function updateSlider() {
+        if (!slider) return;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    // Deslizamiento automático cada 5 segundos
+    setInterval(nextSlide, 5000);
+</script>
 
  <!-- Beneficios con SVG Minimalistas -->
     <section class="py-12 bg-white dark:bg-slate-900 border-b dark:border-slate-800 transition-colors duration-300">
