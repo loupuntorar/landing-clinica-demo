@@ -31,14 +31,59 @@
                 <a href="#contacto" data-es="Ubicación" data-en="Location" class="hover:text-blue-600 transition">Ubicación</a>
             </nav>
             
-            <!-- Acciones a la Derecha: WhatsApp + Botón Tuerca -->
-            <div class="flex items-center space-x-3 relative">
-                
+<div class="flex items-center space-x-3 relative">
+
+                <!-- Botón Iniciar Sesión con Selector de Rol -->
+                <div class="relative">
+                    <button id="login-dropdown-btn" onclick="toggleLoginMenu()" class="bg-blue-600 hover:bg-blue-700 text-white px-3.5 py-2 rounded-lg text-sm font-semibold transition flex items-center space-x-2 shadow-sm">
+                        <svg class="w-4 h-4 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        <span data-es="Iniciar Sesión" data-en="Log In">Iniciar Sesión</span>
+                        <svg class="w-3.5 h-3.5 stroke-current ml-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+
+                    <!-- Submenú para elegir el rol de acceso -->
+                    <div id="login-dropdown" class="hidden absolute right-0 top-12 w-48 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl py-2 z-50 transition-all">
+                        <div class="px-4 py-1 text-[11px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider" data-es="Tipo de acceso" data-en="Access type">Tipo de acceso</div>
+                        
+                        <!-- Rol Paciente -->
+                        <a href="/login/paciente" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            <svg class="w-4 h-4 text-blue-600 dark:text-blue-400 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                            <span data-es="Paciente" data-en="Patient">Paciente</span>
+                        </a>
+
+                        <!-- Rol Doctor -->
+                        <a href="/login/doctor" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                            <span data-es="Doctor" data-en="Doctor">Doctor</span>
+                        </a>
+
+                        <div class="border-t border-slate-100 dark:border-slate-700 my-1"></div>
+
+                        <!-- Rol Administrador -->
+                        <a href="/login/admin" class="flex items-center space-x-3 px-4 py-2 text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition">
+                            <svg class="w-4 h-4 text-amber-500 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                            </svg>
+                            <span data-es="Administrador" data-en="Administrator">Administrador</span>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Botón Principal WhatsApp -->
                 <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20la%20clínica" target="_blank" data-es="Agendar Cita" data-en="Book Appointment" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg text-sm font-semibold transition shadow-sm">
                     Agendar Cita
                 </a>
-
                 <!-- Botón con Icono de Tuerca (Configuración) -->
                 <button id="config-dropdown-btn" onclick="toggleConfigMenu()" class="p-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition" aria-label="Ajustes de la página">
                     <svg class="w-5 h-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -68,52 +113,58 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
-        <div class="max-w-7xl mx-auto px-4 text-center md:text-left grid md:grid-cols-2 gap-12 items-center">
-            <div>
-                <span data-es="Clínica Dental Santa Clara" data-en="Santa Clara Dental Clinic" class="bg-blue-800 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Clínica Dental Santa Clara</span>
-                <h1 data-es="Sonrisas saludables y diseño dental avanzado en Minatitlán" data-en="Healthy smiles and advanced dental design in Minatitlán" class="text-4xl md:text-5xl font-extrabold mt-4 mb-6 leading-tight">Sonrisas saludables y diseño dental avanzado en Minatitlán</h1>
-                <p data-es="Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance." data-en="Specialists committed to your oral health, modern equipment, and exceptional care within your reach." class="text-blue-100 text-lg mb-8">Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance.</p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
-                    <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita" target="_blank" data-es="Reservar por WhatsApp" data-en="Book via WhatsApp" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition text-center shadow-lg">
-                        Reservar por WhatsApp
-                    </a>
-                    <a href="#servicios" data-es="Ver Servicios" data-en="View Services" class="border border-blue-300 hover:bg-blue-800 text-white font-semibold px-6 py-3 rounded-xl transition text-center">
-                        Ver Servicios
-                    </a>
-                </div>
-            </div>
+<!-- Hero Section con carrusel a pantalla completa (50/50) -->
+<section class="bg-blue-900 dark:bg-slate-900 text-white transition-colors duration-300">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 items-center">
+        
+        <!-- Columna Izquierda: Texto y Botones -->
+        <div class="p-8 md:p-12 lg:p-16 space-y-6">
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-300 bg-blue-800/60 dark:bg-slate-800/80 px-3 py-1 rounded-full inline-block">
+                Clínica Dental Santa Clara
+            </span>
             
-            <!-- Contenedor del Carrusel -->
-            <div class="bg-white/10 p-4 rounded-2xl backdrop-blur-sm border border-white/20 shadow-xl">
-                <p data-es="Clínica Dental Santa Clara - Minatitlán" data-en="Santa Clara Dental Clinic - Minatitlán" class="text-center text-sm text-blue-200 mb-3 font-medium">Clínica Dental Santa Clara - Minatitlán</p>
-                
-                <div class="flex overflow-x-auto space-x-4 snap-x snap-mandatory rounded-xl" style="scroll-behavior: smooth;">
-                    <style>
-                        div::-webkit-scrollbar {
-                            display: none;
-                        }
-                    </style>
-                    <div class="min-w-full snap-center">
-                        <img src="img/clinica/clinica-santa-clara.jpg" alt="Logotipo y diseño Clínica Santa Clara" class="rounded-xl w-full h-80 object-cover shadow-inner">
-                    </div>
-                    <div class="min-w-full snap-center">
-                        <img src="img/clinica/santaclara2.png" alt="Instalaciones modernas" class="rounded-xl w-full h-80 object-cover shadow-inner">
-                    </div>
-                    <div class="min-w-full snap-center">
-                        <img src="img/clinica/santaclara3.png" alt="Atención dental profesional" class="rounded-xl w-full h-80 object-cover shadow-inner">
-                    </div>
-                </div>
-                
-                <div class="flex justify-center space-x-2 mt-3">
-                    <span class="w-2 h-2 bg-white rounded-full opacity-75"></span>
-                    <span class="w-2 h-2 bg-white/40 rounded-full"></span>
-                    <span class="w-2 h-2 bg-white/40 rounded-full"></span>
-                </div>
+            <h1 data-es="Sonrisas saludables y diseño dental avanzado en Minatitlán" data-en="Healthy smiles and advanced dental design in Minatitlán" class="text-3xl md:text-5xl font-extrabold leading-tight">
+                Sonrisas saludables y diseño dental avanzado en Minatitlán
+            </h1>
+            
+            <p data-es="Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance." data-en="Specialists committed to your oral health, modern equipment, and exceptional care at your reach." class="text-blue-100 dark:text-slate-300 text-base md:text-lg leading-relaxed">
+                Especialistas comprometidos con tu salud bucal, equipamiento moderno y un trato humano excepcional a tu alcance.
+            </p>
+
+            <!-- Botones de Acción -->
+            <div class="flex flex-wrap gap-4 pt-2">
+                <a href="https://wa.me/529221145756?text=Hola,%20me%20gustaría%20agendar%20una%20cita%20en%20la%20clínica" target="_blank" data-es="Reservar por WhatsApp" data-en="Book via WhatsApp" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg hover:shadow-emerald-500/20">
+                    Reservar por WhatsApp
+                </a>
+                <a href="#servicios" data-es="Ver Servicios" data-en="View Services" class="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-xl transition">
+                    Ver Servicios
+                </a>
             </div>
         </div>
-    </section>
+
+        <!-- Columna Derecha: Carrusel deslizable ocupando toda la mitad -->
+        <div class="relative w-full h-[350px] sm:h-[450px] md:h-full min-h-[400px] overflow-hidden">
+            <div id="hero-carousel" class="flex w-full h-full transition-transform duration-700 ease-in-out">
+                <!-- Imagen 1 -->
+                <div class="w-full h-full flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000" alt="Instalaciones de la clínica" class="w-full h-full object-cover">
+                </div>
+                <!-- Imagen 2 -->
+                <div class="w-full h-full flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&q=80&w=1000" alt="Atención odontológica" class="w-full h-full object-cover">
+                </div>
+                <!-- Imagen 3 -->
+                <div class="w-full h-full flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=1000" alt="Equipo profesional" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Gradiente decorativo para suavizar la unión del borde en móviles -->
+            <div class="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-blue-900 dark:from-slate-900 to-transparent pointer-events-none hidden md:block"></div>
+        </div>
+
+    </div>
+</section>
 
  <!-- Beneficios con SVG Minimalistas -->
     <section class="py-12 bg-white dark:bg-slate-900 border-b dark:border-slate-800 transition-colors duration-300">
@@ -550,6 +601,19 @@
 window.addEventListener('click', function(e) {
     const btn = document.getElementById('config-dropdown-btn');
     const dropdown = document.getElementById('config-dropdown');
+    if (btn && dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add('hidden');
+    }
+});
+function toggleLoginMenu() {
+    const dropdown = document.getElementById('login-dropdown');
+    dropdown.classList.toggle('hidden');
+}
+
+// Cierra el menú al dar clic afuera
+window.addEventListener('click', function(e) {
+    const btn = document.getElementById('login-dropdown-btn');
+    const dropdown = document.getElementById('login-dropdown');
     if (btn && dropdown && !btn.contains(e.target) && !dropdown.contains(e.target)) {
         dropdown.classList.add('hidden');
     }
